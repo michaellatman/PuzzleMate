@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.loyola.puzzlemate.CreatePuzzleActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/puzzle_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_width"
+                android:layout_weight="1"
+                android:scaleType="centerInside"
+                android:src="@android:drawable/ic_menu_camera" />
+
+            <TextView
+                android:id="@+id/puzzle_image_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/puzzle_image_error"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/puzzle_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/prompt_puzzle_name" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/puzzle_Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/prompt_puzzle_description"
+                    android:imeOptions="actionDone" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <EditText
+                android:id="@+id/tag_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/prompt_tag"
+                android:imeOptions="actionDone"
+                android:inputType="textPersonName" />
+
+            <com.cunoraz.tagview.TagView
+                android:id="@+id/puzzle_tags"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="164dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/puzzle_name"
+                app:lineMargin="5dp"
+                app:tagMargin="5dp"
+                app:textPaddingBottom="5dp"
+                app:textPaddingLeft="8dp"
+                app:textPaddingRight="8dp"
+                app:textPaddingTop="5dp">
+
+            </com.cunoraz.tagview.TagView>
+
+            <Button
+                android:id="@+id/button_create_puzzle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/button_create_puzzle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/puzzle_tags" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
